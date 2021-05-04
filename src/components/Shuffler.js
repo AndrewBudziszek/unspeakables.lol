@@ -64,7 +64,7 @@ const Shuffler = () => {
             { currentWordDescription ? (
                 <>
                     <p>{currentWordDescription.replaceAll("[", "").replaceAll("]", "")}</p>
-                    <Link href={wordPermalink} variant="body2">
+                    <Link href={wordPermalink} target="_blank" variant="body2">
                         permalink
                     </Link>
                     <br />
