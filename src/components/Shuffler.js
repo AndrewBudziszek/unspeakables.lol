@@ -12,7 +12,7 @@ const Shuffler = ({ backgroundColorCallback = () => { } }) => {
     const [shufflingIterations, setShufflingIterations] = useState(0);
     const [currentWordDescription, setCurrentWordDescription] = useState("");
     const [gotNewWord, setGotNewWord] = useState(true);
-    const [wordPermalink, setWordPermalink] = useState("")
+    const [wordPermalink, setWordPermalink] = useState("");
 
     var options = {
         method: 'GET',
@@ -30,7 +30,9 @@ const Shuffler = ({ backgroundColorCallback = () => { } }) => {
                 setLatinIndex(Math.floor(Math.random() * (latin.length - 1)));
                 setShufflingIterations(shufflingIterations => shufflingIterations + 1);
                 setCurrentWord(latin[latinIndex]);
-                backgroundColorCallback('#' + Math.random().toString(16).substr(-6))
+                // backgroundColorCallback("hsl(" + 360 * Math.random() + ',' +
+                //     (25 + 70 * Math.random()) + '%,' +
+                //     (85 + 10 * Math.random()) + '%)')
                 if (shufflingIterations > 20) {
                     setShufflingIterations(0);
                     setIsShuffling(false);
