@@ -4,10 +4,10 @@ import Shuffler from './components/Shuffler'
 import FreeBreakfastIcon from '@material-ui/icons/FreeBreakfast';
 import React, { useState } from 'react'
 import { Twitter } from '@material-ui/icons';
-import Amplify from 'aws-amplify';
+import Amplify, { Analytics } from 'aws-amplify';
 import awsconfig from './aws-exports';
 Amplify.configure(awsconfig);
-
+Analytics.record({ name: 'visit' });
 
 function App() {
   const [backgroundColor, setBackgroundColor] = useState("#282c34");
