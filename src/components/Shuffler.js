@@ -82,6 +82,7 @@ const Shuffler = () => {
             >
                 lol
             </Button>
+            <br />
         </div>
     )
 };
