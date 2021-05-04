@@ -74,6 +74,7 @@ const Shuffler = () => {
             <Button
                 variant="contained"
                 color="primary"
+                size="large"
                 onClick={() => {
                     setIsShuffling(true);
                     setCurrentWordDescription('')
