@@ -5,7 +5,7 @@ import badWords from '../libs/bad_words'
 import axios from 'axios'
 import { Link } from '@material-ui/core'
 
-const Shuffler = () => {
+const Shuffler = ({ backgroundColorCallback = () => { } }) => {
     const [latinIndex, setLatinIndex] = useState(0);
     const [currentWord, setCurrentWord] = useState("unspeakables.lol");
     const [isShuffling, setIsShuffling] = useState(false);
@@ -30,6 +30,7 @@ const Shuffler = () => {
                 setLatinIndex(Math.floor(Math.random() * (latin.length - 1)));
                 setShufflingIterations(shufflingIterations => shufflingIterations + 1);
                 setCurrentWord(latin[latinIndex]);
+                backgroundColorCallback('#' + Math.random().toString(16).substr(-6))
                 if (shufflingIterations > 20) {
                     setShufflingIterations(0);
                     setIsShuffling(false);
