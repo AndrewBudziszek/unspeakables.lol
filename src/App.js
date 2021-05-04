@@ -2,8 +2,11 @@ import { Link } from '@material-ui/core'
 import './App.css'
 import Shuffler from './components/Shuffler'
 import FreeBreakfastIcon from '@material-ui/icons/FreeBreakfast';
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Twitter } from '@material-ui/icons';
+import Amplify from 'aws-amplify';
+import awsconfig from './aws-exports';
+Amplify.configure(awsconfig);
 
 
 function App() {

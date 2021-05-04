@@ -4,6 +4,8 @@ import latin from '../libs/latin'
 import badWords from '../libs/bad_words'
 import axios from 'axios'
 import { Link } from '@material-ui/core'
+import Amplify, { Analytics } from 'aws-amplify';
+
 
 const Shuffler = ({ backgroundColorCallback = () => { } }) => {
     const [latinIndex, setLatinIndex] = useState(0);
@@ -79,6 +81,7 @@ const Shuffler = ({ backgroundColorCallback = () => { } }) => {
                 color="primary"
                 size="large"
                 onClick={() => {
+                    Analytics.record({ name: 'lolButtonPressed' });
                     setIsShuffling(true);
                     setCurrentWordDescription('')
                 }}
