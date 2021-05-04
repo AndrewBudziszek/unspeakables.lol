@@ -1,3 +1,18 @@
 {
-  "features": {}
+  "features": {
+    "auth": {
+      "enablecaseinsensitivity": true,
+      "useinclusiveterminology": true
+    },
+    "codegen": {
+      "useappsyncmodelgenplugin": true,
+      "usedocsgeneratorplugin": true,
+      "usetypesgeneratorplugin": true,
+      "cleangeneratedmodelsdirectory": true,
+      "retaincasestyle": true
+    },
+    "appsync": {
+      "generategraphqlpermissions": true
+    }
+  }
 }

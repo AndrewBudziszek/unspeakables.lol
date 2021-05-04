@@ -6,8 +6,28 @@ import React, { useState } from 'react'
 import { Twitter } from '@material-ui/icons';
 import Amplify, { Analytics } from 'aws-amplify';
 import awsconfig from './aws-exports';
+import Auth from '@aws-amplify/auth';
 Amplify.configure(awsconfig);
-Analytics.record({ name: 'visit' });
+const amplifyConfig = {
+  Auth: {
+    identityPoolId: 'us-east-1:c6f68a80-2f3b-4489-acaa-61d01c426832',
+    region: 'us-east-1'
+  }
+}
+const analyticsConfig = {
+  AWSPinpoint: {
+    // Amazon Pinpoint App Client ID
+    appId: '966de74975fb48dbaf809a347664e636',
+    // Amazon service region
+    region: 'us-east-1',
+    mandatorySignIn: false,
+  }
+}
+
+Analytics.configure(analyticsConfig)
+Auth.configure(amplifyConfig);
+
+Analytics.record('visit');
 
 function App() {
   const [backgroundColor, setBackgroundColor] = useState("#282c34");
