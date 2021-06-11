@@ -26,6 +26,9 @@ const Shuffler = ({ backgroundColorCallback = () => { } }) => {
         }
     };
 
+    console.log(REACT_APP_RAPID_API_KEY);
+    console.log(REACT_APP_ASS);
+
     useEffect(() => {
         if (isShuffling) {
             const interval = setInterval(async () => {
