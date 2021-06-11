@@ -21,10 +21,12 @@ const Shuffler = ({ backgroundColorCallback = () => { } }) => {
         url: 'https://mashape-community-urban-dictionary.p.rapidapi.com/define',
         params: { term: currentWord },
         headers: {
-            'x-rapidapi-key': `${process.env.RAPID_API_KEY}`,
+            'x-rapidapi-key': '08e886ca04msh660dbe4641f15c7p114b61jsne0fb36ceceaa',
             'x-rapidapi-host': 'mashape-community-urban-dictionary.p.rapidapi.com'
         }
     };
+
+    console.log("ENV VAR:", process.env.RAPID_API_KEY);
 
     useEffect(() => {
         if (isShuffling) {
