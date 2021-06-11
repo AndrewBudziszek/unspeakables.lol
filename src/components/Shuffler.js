@@ -27,7 +27,7 @@ const Shuffler = ({ backgroundColorCallback = () => { } }) => {
     };
 
     console.log(process.env.REACT_APP_RAPID_API_KEY);
-    console.log(procecss.env.REACT_APP_ASS);
+    console.log(process.env.REACT_APP_ASS);
 
     useEffect(() => {
         if (isShuffling) {
