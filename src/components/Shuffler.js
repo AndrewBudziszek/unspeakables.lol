@@ -4,7 +4,7 @@ import latin from '../libs/latin'
 import badWords from '../libs/bad_words'
 import axios from 'axios'
 import { Link } from '@material-ui/core'
-import Amplify, { Analytics } from 'aws-amplify';
+import { Analytics } from 'aws-amplify';
 
 
 const Shuffler = ({ backgroundColorCallback = () => { } }) => {
@@ -25,8 +25,6 @@ const Shuffler = ({ backgroundColorCallback = () => { } }) => {
             'x-rapidapi-host': 'mashape-community-urban-dictionary.p.rapidapi.com'
         }
     };
-
-    console.log("ENV VAR:", process.env.RAPID_API_KEY);
 
     useEffect(() => {
         if (isShuffling) {
