@@ -9,7 +9,7 @@ import Amplify, { Analytics } from 'aws-amplify';
 
 const Shuffler = ({ backgroundColorCallback = () => { } }) => {
     const [latinIndex, setLatinIndex] = useState(0);
-    const [currentWord, setCurrentWord] = useState("unspeakables.lol f");
+    const [currentWord, setCurrentWord] = useState("unspeakables.lol");
     const [isShuffling, setIsShuffling] = useState(false);
     const [shufflingIterations, setShufflingIterations] = useState(0);
     const [currentWordDescription, setCurrentWordDescription] = useState("");
